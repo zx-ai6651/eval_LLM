@@ -1,0 +1,9 @@
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+SQLAlchemy==2.0.36
+pydantic==2.10.4
+PyMySQL==1.1.1
+httpx==0.28.1
+python-dotenv==1.0.1
+langgraph==0.2.60
+openpyxl==3.1.5

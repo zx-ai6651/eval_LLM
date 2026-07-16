@@ -1,0 +1,102 @@
+{
+  "default_provider": "deepseek",
+  "providers": {
+    "deepseek": {
+      "label": "DeepSeek",
+      "api_style": "openai_compatible",
+      "base_url": "https://api.deepseek.com",
+      "api_key_env": "DEEPSEEK_API_KEY",
+      "default_model": "deepseek-v4-flash",
+      "models": ["deepseek-v4-flash", "deepseek-v4-pro", "deepseek-chat", "deepseek-reasoner"],
+      "builtin_search": {
+        "enabled": false
+      }
+    },
+    "bailian": {
+      "label": "阿里百炼",
+      "api_style": "openai_compatible",
+      "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+      "api_key_env": "BAILIAN_API_KEY",
+      "api_key_env_aliases": ["DASHSCOPE_API_KEY"],
+      "default_model": "qwen3.7-plus",
+      "models": ["qwen3.7-plus", "qwen3.7-max", "qwen-turbo", "qwen-long"],
+      "builtin_search": {
+        "enabled": true,
+        "api_mode": "chat_completions",
+        "tool_pair": ["web_search", "web_extractor"],
+        "chat_completions": {
+          "enable_search": true,
+          "search_options": {
+            "forced_search": true,
+            "search_strategy": "turbo",
+            "enable_source": true,
+            "enable_citation": true,
+            "citation_format": "[ref_<number>]"
+          }
+        },
+        "responses_tools": [
+          { "type": "web_search" },
+          { "type": "web_extractor" }
+        ]
+      }
+    }
+  },
+  "agents": {
+    "task_executor": {
+      "label": "测试执行 Agent",
+      "provider": "bailian",
+      "model": "qwen3.7-plus",
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 1800
+    },
+    "evaluator": {
+      "label": "评估 Agent",
+      "provider": "bailian",
+      "model": "qwen3.7-plus",
+      "temperature": 0.1,
+      "top_p": 0.8,
+      "max_tokens": 2200
+    },
+    "problem_finder": {
+      "label": "问题发现 Agent",
+      "provider": "bailian",
+      "model": "qwen3.7-plus",
+      "temperature": 0.1,
+      "top_p": 0.8,
+      "max_tokens": 1200
+    },
+    "reporter": {
+      "label": "汇报 Agent",
+      "provider": "bailian",
+      "model": "qwen3.7-plus",
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 1800
+    },
+    "prompt_optimizer": {
+      "label": "Prompt 优化 Agent",
+      "provider": "bailian",
+      "model": "qwen3.7-plus",
+      "temperature": 0.3,
+      "top_p": 0.9,
+      "max_tokens": 1800
+    },
+    "pipeline_planner": {
+      "label": "任务流水线规划 Agent",
+      "provider": "bailian",
+      "model": "qwen3.7-max",
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 3200
+    },
+    "optimization_planner": {
+      "label": "优化方案 Agent",
+      "provider": "bailian",
+      "model": "qwen3.7-max",
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 3200
+    }
+  }
+}

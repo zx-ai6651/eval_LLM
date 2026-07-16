@@ -1,0 +1,71 @@
+{
+  "currency": "CNY",
+  "default_model_pricing": {
+    "input_per_million_tokens": 0,
+    "cached_input_per_million_tokens": 0,
+    "output_per_million_tokens": 0
+  },
+  "default_tool_pricing": {
+    "web_search_per_1000_calls": 4,
+    "web_extractor_per_1000_calls": 0
+  },
+  "providers": {
+    "deepseek": {
+      "models": {
+        "deepseek-v4-flash": {
+          "input_per_million_tokens": 0,
+          "cached_input_per_million_tokens": 0,
+          "output_per_million_tokens": 0
+        },
+        "deepseek-v4-pro": {
+          "input_per_million_tokens": 0,
+          "cached_input_per_million_tokens": 0,
+          "output_per_million_tokens": 0
+        },
+        "deepseek-chat": {
+          "input_per_million_tokens": 0,
+          "cached_input_per_million_tokens": 0,
+          "output_per_million_tokens": 0
+        },
+        "deepseek-reasoner": {
+          "input_per_million_tokens": 0,
+          "cached_input_per_million_tokens": 0,
+          "output_per_million_tokens": 0
+        }
+      },
+      "tools": {
+        "web_search_per_1000_calls": 0,
+        "web_extractor_per_1000_calls": 0
+      }
+    },
+    "bailian": {
+      "models": {
+        "qwen3.7-plus": {
+          "input_per_million_tokens": 1,
+          "cached_input_per_million_tokens": 0.2,
+          "output_per_million_tokens": 4
+        },
+        "qwen3.7-max": {
+          "input_per_million_tokens": 6,
+          "cached_input_per_million_tokens": 0.6,
+          "output_per_million_tokens": 18
+        },
+        "qwen-turbo": {
+          "input_per_million_tokens": 0,
+          "cached_input_per_million_tokens": 0,
+          "output_per_million_tokens": 0
+        },
+        "qwen-long": {
+          "input_per_million_tokens": 0,
+          "cached_input_per_million_tokens": 0,
+          "output_per_million_tokens": 0
+        }
+      },
+      "tools": {
+        "web_search_per_1000_calls": 4,
+        "web_extractor_per_1000_calls": 0
+      }
+    }
+  }
+}
+
